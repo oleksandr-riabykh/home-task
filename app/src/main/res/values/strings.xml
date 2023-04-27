@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Take Home</string>
+    <string name="loading">Loading…</string>
+    <string name="main_screen_input_hint">Enter a github user id</string>
+    <string name="main_screen_search_button">Search</string>
+    <string name="main_screen_close_button">Close</string>
+    <string name="main_screen_list_is_empty">Empty repos.</string>
+    <string name="main_screen_intro_message">Hello scotia folks!</string>
+    <string name="main_screen_user_avatar">User Avatar</string>
+    <string name="main_screen_item_updated_at">Updated: %s</string>
+    <string name="main_screen_item_forks">Forks count: %d</string>
+    <string name="main_screen_item_stargazers">Stargazers count: %d</string>
+</resources>

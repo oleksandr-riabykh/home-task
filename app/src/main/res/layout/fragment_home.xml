@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.alex.scotiagit.ui.home.model.UserUiModel" />
+
+        <variable
+            name="message"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/main_application_space_size"
+            android:layout_marginTop="@dimen/main_application_space_size"
+            android:background="@android:color/transparent"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/search_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/main_screen_input_hint"
+                android:imeOptions="actionDone"
+                android:inputType="textFilter"
+                android:nextFocusRight="@id/search_button"
+                android:paddingStart="0dp"
+                android:paddingEnd="@dimen/main_application_space_small_size" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/main_application_space_size"
+            android:text="@string/main_screen_search_button"
+            app:layout_constraintBottom_toBottomOf="@+id/search_input_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_input_layout"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/photo_image_view"
+            android:layout_width="@dimen/main_screen_user_icon_size"
+            android:layout_height="@dimen/main_screen_user_icon_size"
+            android:layout_marginTop="@dimen/main_application_space_size"
+            android:binding_url="@{model.photo}"
+            android:contentDescription="@string/main_screen_user_avatar"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/search_button"
+            app:layout_constraintStart_toStartOf="@+id/search_input_layout"
+            app:layout_constraintTop_toBottomOf="@+id/search_input_layout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/ic_baseline_photo"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_application_space_size"
+            android:text="@{model.name}"
+            android:textColor="@color/gray_dark"
+            android:textSize="@dimen/main_screen_title_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photo_image_view"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Git User Name" />
+
+        <com.alex.scotiagit.ui.views.StatusView
+            android:id="@+id/status_view"
+            style="@style/Widget.Theme.GitHome.StatusView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/message_height"
+            android:layout_margin="@dimen/main_application_space_size"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_text_view"
+            app:message="@{message}"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/repos_recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/main_application_space_size"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_text_view"
+            tools:listitem="@layout/item_git_repo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

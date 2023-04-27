@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="main_application_space_size">16dp</dimen>
+    <dimen name="main_application_space_big_size">32dp</dimen>
+    <dimen name="main_application_space_small_size">8dp</dimen>
+    <dimen name="main_screen_margin_top">2dp</dimen>
+    <dimen name="main_screen_user_icon_size">112dp</dimen>
+    <dimen name="message_height">120dp</dimen>
+    <dimen name="elevation">6dp</dimen>
+
+    <!--    TEXT-->
+    <dimen name="main_screen_title_text_size">18sp</dimen>
+    <dimen name="dialog_title_text_size">18sp</dimen>
+    <dimen name="main_screen_item_title_text_size">17sp</dimen>
+</resources>

@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="Widget.Theme.GitHome.StatusView" parent="">
+        <item name="android:background">@color/white</item>
+    </style>
+</resources>
